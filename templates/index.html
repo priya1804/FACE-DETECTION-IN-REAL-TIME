@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to the Face Recognition App!</h1>
+    <p class="lead">Use the navigation bar to capture images, train the model, or recognize faces.</p>
+    <hr class="my-4">
+    <p>This system uses OpenCV for face detection and LBPH for recognition.</p>
+  </div>
+  <h2>Instructions:</h2>
+  <ol>
+      <li>Go to "Capture Faces" to add images of individuals.</li>
+      <li>Go to "Train Model" after capturing images for all individuals.</li>
+      <li>Use "Recognize from Image" or "Real-time Recognition" to test.</li>
+  </ol>
+{% endblock %}

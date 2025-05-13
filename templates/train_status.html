@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Train Model Status</h2>
+  {% if status_message %}
+    <div class="alert alert-info">
+      <h4>Training Log:</h4>
+      <pre>{{ status_message }}</pre>
+    </div>
+  {% else %}
+    <p>Click the button to start training the model. This might take a few moments.</p>
+  {% endif %}
+  <form method="POST" action="{{ url_for('start_train') }}">
+    <button type="submit" class="btn btn-success">Start Training</button>
+  </form>
+   <hr>
+  <p><a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a></p>
+{% endblock %}

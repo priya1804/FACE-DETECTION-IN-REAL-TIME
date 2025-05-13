@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Capture Face Images</h2>
+  <p>Enter the name of the person and click "Start Capture". The system will attempt to capture {{ config.NUM_IMAGES_TO_CAPTURE_WEB }} images. Ensure only one face is clearly visible in the webcam feed.</p>
+  <form method="POST" action="{{ url_for('start_capture') }}">
+    <div class="form-group">
+      <label for="name">Person's Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required placeholder="e.g., John_Doe">
+    </div>
+    <button type="submit" class="btn btn-primary">Start Capture</button>
+  </form>
+  <hr>
+<!-- ... inside capture.html ... -->
+    <h3>Existing Datasets:</h3>
+    {% if datasets %}
+    <ul class="dataset-list"> {# <--- Added class here #}
+        {% for person in datasets %}
+        <li>{{ person }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <!-- ... -->
+    <p>No datasets found yet. Start by capturing images for a new person.</p>
+  {% endif %}
+{% endblock %}

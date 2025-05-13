@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Recognize Faces from an Image</h2>
+  <p>Upload an image (JPG, PNG) to detect and recognize faces.</p>
+  <form method="POST" action="{{ url_for('upload_and_recognize_image') }}" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="imagefile">Select image:</label>
+      <input type="file" class="form-control-file" id="imagefile" name="imagefile" accept=".jpg, .jpeg, .png" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload and Recognize</button>
+  </form>
+
+  {% if processed_image_url %}
+    <hr>
+    <h3>Recognition Result:</h3>
+    <img src="{{ processed_image_url }}?t={{ timestamp }}" alt="Recognized Image" class="img-fluid mt-3">
+    {% if detected_names %}
+      <p class="mt-2"><strong>Detected:</strong> {{ detected_names|join(', ') }}</p>
+    {% endif %}
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Real-time Face Recognition</h2>
+  <p>The webcam feed below will show detected and recognized faces. Point your camera towards faces.</p>
+  <div class="text-center">
+      <img id="videoFeed" src="{{ url_for('video_feed') }}" width="640" height="480">
+  </div>
+  <p class="mt-3 text-center">
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">Stop and Go Home</a>
+  </p>
+  <script>
+      // Optional: Add JS to stop the feed or handle errors if needed,
+      // but for basic functionality, the img src is enough.
+      // If the server stops sending frames, the image will just freeze.
+  </script>
+{% endblock %}
