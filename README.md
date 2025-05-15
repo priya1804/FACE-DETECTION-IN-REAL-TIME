@@ -1,6 +1,6 @@
 # Face Recognition System using Python and OpenCV
 
-### 👩‍💻 Developed by: Ishika Sheth & Priya Shukla
+### 👩‍💻 Developed by: Priya Shukla  & Ishika Sheth
 
 ---
 
