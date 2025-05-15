@@ -63,7 +63,7 @@ Make sure Python is installed. Then install required libraries:
 pip install opencv-python
 pip install opencv-contrib-python
 pip install numpy
-pip install flask
+pip install Flask
 
 Capture images for training
 
